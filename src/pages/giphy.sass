@@ -1,0 +1,125 @@
+@mixin flex($j, $a, $f)
+   display: flex
+   justify-content: $j
+   align-items: $a
+   flex-direction: $f
+
+
+.main
+    width: 75%
+    height: 100%
+    margin: auto
+
+.container-gif
+    @include flex(space-between, none, row)
+    width: 100%
+    height: 100%
+    padding-top: 30px
+
+aside
+    width: 20%
+    height: 100%
+
+.creator
+    width: 100%
+    @include flex(flex-start, center, row)
+
+.creator img 
+    width: 60px
+    height: 60px
+    margin-right: 15px
+
+.description
+    margin-top: 45px
+    width: 100%
+    height: 100%
+
+.container-name
+    @include flex(none, none, column)
+    width: 50%
+    height: 60px
+
+    & h1 
+        text-transform: uppercase
+        font-size: 17px
+        margin: 0
+        margin-top: 8px
+
+.container-name label 
+    @include flex(none, none, row)
+    height: 15px
+
+    & p 
+        font-size: 14px
+        font-weight: bold
+        color: #ddd
+        margin-top: 2px
+
+    & img 
+        width: 17px
+        height: 17px
+        margin-top: 2px
+       
+.giphy
+    width: 80%
+    height: 100%
+    padding-left: 50px
+    @include flex(none, none, row)
+
+.giff
+    width: 70%
+    min-width: 360px
+    height: 330px
+    @include flex(none, start, column)
+    margin-top: -10px
+
+    & h1 
+        font-size: 15px
+        color: #c2c2c2
+
+    & img 
+        width: 100%
+        height: 100%
+
+.preview
+    width: 100%
+    height: 230px
+    margin-top: -10px
+
+    & img
+        width: 100%
+        height: 100%
+
+.copy-link
+    width: 30%
+    height: 100%
+    @include flex(none, end, column)
+
+    & button 
+        width: 90%
+        height: 40px
+        background: #8e3aff
+        color: #fff
+        border: 0
+        font-weight: bold
+        font-size: 15px
+        margin-top: 35px
+        margin-bottom: 20px
+
+.views
+    width: 90%
+    height: 124px
+
+    & img 
+        width: 100%
+        height: 100%
+        margin-bottom: 12px
+
+.footer 
+    width: 100%
+    height: 70px
+    margin-top: 10px
+
+    & img 
+        width: 100%
+        height: 100%

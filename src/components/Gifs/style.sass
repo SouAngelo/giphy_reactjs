@@ -1,0 +1,31 @@
+@mixin flex($j, $a, $f)
+   display: flex
+   justify-content: $j
+   align-items: $a
+   flex-direction: $f
+
+.container-flex 
+    width: 75%
+    height: 100%
+    @include flex(space-between, center, row)
+    flex-wrap: wrap
+    margin: auto
+
+.flex-container
+    width: 19%
+    height: 200px
+    margin-bottom: 20px
+
+.gif 
+    width: 100%
+    height: 100%
+
+    & a 
+        text-decoration: none
+
+    & img
+      width: 100%
+      height: 100%
+      border-radius: 5px
+    
+
