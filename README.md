@@ -1,6 +1,8 @@
 ## 🔗 Sobre o Projeto
 
-Deploy: https://pokedex-hiroto.netlify.app
+AINDA ESTÁ EM DESENVOLVIMENTO.
+
+Deploy: https://giphy-clone-hiroto.netlify.app/
 
 <p>
 Esse é um projeto consumindo uma API do site GIPHY. Ao entrar na página inicial, você encontrará um search (campo para pesquisar) podendo pesquisar vários e vários tipos de Gifs do seu gosto. É só digitar e buscar.
@@ -53,7 +55,7 @@ A página é totalmente responsiva, podendo ser acessada em qualquer dispositivo
 - SASS
 <br>
 
-## Implantação em produção
+## 🎮 Implantação em produção
 
 - Web de front-end: Netlify
 - Flexbox
@@ -62,7 +64,7 @@ A página é totalmente responsiva, podendo ser acessada em qualquer dispositivo
 - Context API
 - API REST
 
-## Bibliotecas Utilizadas
+## 📓 Bibliotecas Utilizadas
 
 - Font Awesome
 - Animated CSS burguers
