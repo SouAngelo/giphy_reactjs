@@ -1,17 +1,28 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
+import Burger from '@animated-burgers/burger-squeeze' 
+import '@animated-burgers/burger-squeeze/dist/styles.css' 
 import { giphyContexts } from '../../contexts/giphyContext'
-import { Link, useNavigate } from 'react-router-dom'
-import api from '../../services/api'
+import { Link } from 'react-router-dom'
 import logo from './logo.gif'
 import './style.sass'
 
 function Searchbar() {
 
   const {search, setSearch} = useContext(giphyContexts)
-
   const [gif, setGif] = useState('')
 
-  const navigate = useNavigate()
+  const [open, setOpen] = useState(false);
+  const hamb = useRef(null);
+
+  const openHamburguer = () => {
+    setOpen(!open);
+
+    if (open === true) {
+      hamb.current.style.display = "none";
+    } else {
+      hamb.current.style.display = "block";
+    }
+  };
 
   function getGiphy(e){
 
@@ -21,14 +32,9 @@ function Searchbar() {
   }
 
 
-  function getCategory(e){
-      e.preventDefault()
-
-      navigate('/categories')
-  }
 
   return (
-    <div className='container'>
+    <header className='container'>
 
         <div className="categories">
               <div className="logo">
@@ -36,25 +42,26 @@ function Searchbar() {
                   <Link to='/'><h1>GIPHY</h1></Link>
               </div>
 
-              <nav>
+              <nav ref={hamb}>
                 <ul>
-                    <Link onClick={getCategory}><li>Reactions</li></Link>
-                    <Link onClick={getCategory}><li>Enterainment</li></Link>
-                    <Link onClick={getCategory}><li>Sports</li></Link>
-                    <Link onClick={getCategory}><li>Stickers</li></Link>
-                    <Link onClick={getCategory}><li>Artists</li></Link>
-                    <Link onClick={getCategory}><li>Anime</li></Link>
-                    <Link onClick={getCategory}><li>Memes</li></Link>
+                    <Link to='/sports'><li>Sports</li></Link>
+                    <Link to='/stickers'><li>Stickers</li></Link>
+                    <Link to='/artists'><li>Artists</li></Link>
+                    <Link to='/anime'><li>Anime</li></Link>
                 </ul>
+                
               </nav>
+              <Burger isOpen={open} onClick={openHamburguer} id='burguer' />
         </div>
 
         <form onSubmit={getGiphy}>
            <input type="text" value={gif} onChange={(e) => setGif(e.target.value)} placeholder='Procure aqui'/>
-           <button type='submit'>buscar</button>
+           <button type='submit'>
+              <i className="fa-solid fa-magnifying-glass search"></i>
+           </button>
         </form>
        
-    </div>
+    </header>
   )
 }
 

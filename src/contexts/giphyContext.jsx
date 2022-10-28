@@ -9,7 +9,6 @@ function GiphyProvider({children}){
 
     const [giphy, setGiphy] = useState([])
     const [search, setSearch] = useState('gif')
-    const [categorie, setCategorie] = useState([])
 
     const [offset, setOffset] = useState(0)
     const [offset2, setOffset2] = useState(0)
@@ -55,19 +54,6 @@ function GiphyProvider({children}){
     }, [viewGiphy])
 
 
-  // chamada das categorias
-    useEffect(()=> {
-
-      async function loadCategory(){
-  
-        let key = 'RBL9rQN0QL4EHnDTJC2kJW8bldXcnxfh&q'
-        // const response = await api.get(`gifs/search?api_key=${key}=${tst}&limit=25&offset=0&rating=g&lang=pt`)
-        // setCategorie(response)
-      }
-      
-      loadCategory()
-      
-    }, [])
 
   
     return(

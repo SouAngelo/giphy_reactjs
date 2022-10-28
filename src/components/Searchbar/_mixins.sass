@@ -1,0 +1,41 @@
+@mixin flex($j, $a, $f)
+    display: flex
+    justify-content: $j
+    align-items: $a
+    flex-direction: $f
+
+@mixin border
+
+    animation: border infinite 5s
+
+@keyframes border
+    0%
+        border-image-source: linear-gradient(51deg, rgba(255,8,12,1) 0%, rgba(228,5,197,1) 48%, rgba(117,11,246,1) 77%)
+
+    45%
+        border-image-source: linear-gradient(51deg, #0026ff 0%, #e47c05 48%, #a00bf6 77%)
+
+    75%
+        border-image-source: linear-gradient(51deg, #00ff55 0%, #e405d1 48%, #f6b70b 77%)
+
+    100%
+        border-image-source: linear-gradient(51deg, rgba(255,8,12,1) 0%, rgba(228,5,197,1) 48%, rgba(117,11,246,1) 77%)
+
+@mixin color
+
+    animation: color infinite 10s
+
+@keyframes color
+    0%
+        color: #00faaf
+
+    45%
+        color: #00fc0d
+
+    75%
+        color: #ffee00
+
+    100%
+        color: #00faaf
+
+

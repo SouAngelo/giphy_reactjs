@@ -1,25 +1,5 @@
-@mixin flex($j, $a, $f)
-   display: flex
-   justify-content: $j
-   align-items: $a
-   flex-direction: $f
+@import 'mixins'
 
-@mixin border
-  
-  animation: border infinite 5s
-
-  @keyframes border
-      0%
-         border-image-source: linear-gradient(51deg, rgba(255,8,12,1) 0%, rgba(228,5,197,1) 48%, rgba(117,11,246,1) 77%)
-
-      45% 
-         border-image-source: linear-gradient(51deg, #0026ff 0%, #e47c05 48%, #a00bf6 77%)
-
-      75%
-         border-image-source: linear-gradient(51deg, #00ff55 0%, #e405d1 48%, #f6b70b 77%)
-
-      100% 
-         border-image-source: linear-gradient(51deg, rgba(255,8,12,1) 0%, rgba(228,5,197,1) 48%, rgba(117,11,246,1) 77%)
 
 
 .container
@@ -27,6 +7,9 @@
     height: 100%
     @include flex(center, center, column)
     margin: auto
+    @media screen and(max-width: 900px)
+        width: 90%
+        margin-bottom: 20px
 
 .categories
     @include flex(space-between, center, row)
@@ -37,25 +20,37 @@
     @include flex(center, center, row)
     width: 130px
 
-    & h1 
+    & h1
         font-size: 40px
         margin: 0
         margin-left: -40px
-    
-.logo img 
-        width: 100%
+
+.logo img
+    width: 100%
 
 nav
     width: 75%
+    @media screen and(max-width: 600px)
+        display: none
+        position: absolute
+        top: 72px
+        right: 20px
+        width: 70%
+        background: #494949
+        min-width: 350px
 
-nav ul 
-    @include flex(space-around, center, row)
+nav ul
+    @include flex(flex-end, center, row)
     width: 90%
-
-    & li 
+    gap: 20px
+    @media screen and(max-width: 600px)
+        width: 80%
+        @include flex(flex-start, center, row)
+        
+    & li
         list-style: none
         font-weight: bold
-        border-bottom: 2px solid 
+        border-bottom: 2px solid
         border-image-slice: 1
         border-image-source: linear-gradient(51deg, rgba(255,8,12,1) 0%, rgba(228,5,197,1) 48%, rgba(117,11,246,1) 77%)
         @include border
@@ -75,12 +70,11 @@ nav ul
             opacity: 0
             transition: ease-in .2s
             padding: 15px
-        
+
         &:hover::before
             opacity: 1
-            
 
-form 
+form
     width: 100%
     height: 50px
     @include flex(center, center, row)
@@ -92,13 +86,28 @@ form
         border: 0
         padding: 0 10px
         outline: 0
-       
-    & button 
+
+    & button
         width: 10%
+        min-width: 70px
         height: 100%
         border: 0
+        background: #252525
+
+.search
+    font-size: 20px
+    @include color
 
     & input::placeholder
         font-weight: 600
         font-size: 16px
         color: #b1b1b1
+
+#burguer
+    display: none
+    position: absolute
+    right: 15px
+    @media (max-width: 600px)
+        display: block
+        font-size: 10px
+        margin-right: 20px
