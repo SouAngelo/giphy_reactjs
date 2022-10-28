@@ -41,7 +41,7 @@ A página é totalmente responsiva, podendo ser acessada em qualquer dispositivo
 </p>
 <br>
 <p align='center'>
-<img width='700' height='700' src='src/assets/gif-responsivo.gif'>
+<img width='400' height='700' src='src/assets/gif-responsivo.gif'>
 </p>
 
 
