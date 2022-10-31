@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from 'react'
 import Burger from '@animated-burgers/burger-squeeze' 
 import '@animated-burgers/burger-squeeze/dist/styles.css' 
 import { giphyContexts } from '../../contexts/giphyContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from './logo.gif'
 import './style.sass'
 
@@ -10,6 +10,7 @@ function Searchbar() {
 
   const {search, setSearch} = useContext(giphyContexts)
   const [gif, setGif] = useState('')
+  const navigate = useNavigate()
 
   const [open, setOpen] = useState(false);
   const hamb = useRef(null);
@@ -29,6 +30,10 @@ function Searchbar() {
     e.preventDefault()
 
     setSearch(gif)
+    setGif('')
+
+    navigate('/')
+
   }
 
 
@@ -47,7 +52,7 @@ function Searchbar() {
                     <Link to='/sports'><li>Sports</li></Link>
                     <Link to='/stickers'><li>Stickers</li></Link>
                     <Link to='/artists'><li>Artists</li></Link>
-                    <Link to='/anime'><li>Anime</li></Link>
+                    <Link to='/anime'><li>Animes</li></Link>
                 </ul>
                 
               </nav>
